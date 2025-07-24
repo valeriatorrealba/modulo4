@@ -1,4 +1,114 @@
 /*************************************************
+    ABP2 AE2 Ejercicio Práctico
+**************************************************/
+// Problema 1:
+let valorIngresado = prompt("Ingresa un número");
+let valor = parseFloat(valorIngresado);
+let mensaje = "";
+
+if (valor > 1 && valor <= 100) {
+    if ((valor > 5 && valor < 15) || valor === 70 || valor === 55) {
+        mensaje = "El número ingresado tiene opciones de ganar";
+    } else {
+        mensaje = "El número ingresado no es favorable";
+    }
+} else {
+    mensaje = "El número ingresado no está dentro del rango permitido (mayor a 1 y menor o igual a 100)";
+}
+
+document.getElementById("resultado").textContent = mensaje;
+
+// Problema 2:
+let yearUsuario = prompt("Ingresa un año:");
+let year = parseInt(yearUsuario);
+let mensaje = "";
+
+if (isNaN(year) || year < 0) {
+    mensaje = "El valor ingresado no es válido. Debe ser un número mayor o igual a 0.";
+} else {
+    if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+        mensaje = `${year} es un año bisiesto.`;
+    } else {
+        mensaje = `${year} no es un año bisiesto.`;
+    }
+}
+
+document.getElementById("resultado").textContent = mensaje;
+
+// Problema 3:
+let jugadorA = prompt("Cuántos juegos ganó el Jugador A");
+let valor1 = parseInt(jugadorA);
+
+let jugadorB = prompt("Cuántos juegos ganó el Jugador B");
+let valor2 = parseInt(jugadorB);
+
+let mensaje = "";
+
+if ((valor1 >= 0 && valor1 <= 7) && (valor2 >= 0 && valor2 <= 7)) {
+    if ((valor1 === 7 && (valor2 === 5 || valor2 === 6)) || (valor1 === 6 && valor2 <= 4)) {
+        mensaje = `Jugador A ganó el set con marcador ${valor1} - ${valor2}`;
+    } else if ((valor2 === 7 && (valor1 === 5 || valor1 === 6)) || (valor2 === 6 && valor1 <= 4)) {
+        mensaje = `Jugador B ganó el set con marcador ${valor1} - ${valor2}`;
+    } else if ((valor1 < 6 && valor2 < 6) || (Math.abs(valor1 - valor2) < 2 && valor1 >= 5 && valor2 >= 5)) {
+        mensaje = `El set aún no termina. Marcador actual: ${valor1} - ${valor2}`;
+    } else {
+        mensaje = "Resultado inválido";
+    }
+} else {
+    mensaje = "Los valores ingresados están fuera del rango permitido (0 a 7)";
+}
+
+document.getElementById("resultado").textContent = mensaje;
+
+/*************************************************
+    ABP AE2 Ejercicio Práctico
+**************************************************/
+// Problema 1:
+
+/*let valor = prompt("Ingresa un monto");
+let monto = parseFloat(valor);
+
+const cambioDolar = 745;
+
+if (!isNaN(monto)) {
+    let resultadoPesoChileno = monto * cambioDolar;
+    console.log("Equivalente en pesos chilenos: " + resultadoPesoChileno);
+} else {
+    console.log("Por favor, ingresa un monto válido.");
+}*/
+
+// Problema 2
+/*let edadTexto = prompt("Ingresa tu edad");
+let edad = parseFloat(edadTexto);
+
+let cedulaTexto = prompt("¿Tienes cédula vigente? (si/no)").toLowerCase();
+let cedulaVigente = (cedulaTexto === "si");
+
+let ahorroTexto = prompt("Ingresa tu ahorro en UF");
+let ahorroUF = parseFloat(ahorroTexto);
+
+let vulnerableTexto = prompt("¿Perteneces al 70% más vulnerable? (si/no)").toLowerCase();
+let vulnerable70 = (vulnerableTexto === "si");
+
+if (edad > 18 && cedulaVigente && ahorroUF >= 4 && vulnerable70) {
+    console.log("Puede optar al beneficio");
+
+    let ufSolicitadas = parseFloat(prompt("¿Cuántas UF deseas usar en total?"));
+    let mesesNecesarios = ufSolicitadas / 4.2;
+
+    if (ufSolicitadas <= 170 && mesesNecesarios <= 96) {
+        console.log("Puedes usar el subsidio en ese periodo.");
+    } else {
+        console.log("No puedes solicitar esa cantidad de UF o tiempo excedido.");
+    }
+
+} else {
+    console.log("No califica para el subsidio.");
+}
+*/
+
+
+/*************************************************
     ABPRO AE1 Ejercicio Práctico
 **************************************************/
 /*
@@ -47,49 +157,4 @@ if (seleccion == "1") {
     console.log("TOTAL FINAL: $" + total);
 }
 */
-/*************************************************
-    ABP AE2 Ejercicio Práctico
-**************************************************/
-// Problema 1:
-
-let valor = prompt("Ingresa un monto");
-let monto = parseFloat(valor);
-
-const cambioDolar = 745;
-
-if (!isNaN(monto)) {
-    let resultadoPesoChileno = monto * cambioDolar;
-    console.log("Equivalente en pesos chilenos: " + resultadoPesoChileno);
-} else {
-    console.log("Por favor, ingresa un monto válido.");
-}
-
-// Problema 2
-let edadTexto = prompt("Ingresa tu edad");
-let edad = parseFloat(edadTexto);
-
-let cedulaTexto = prompt("¿Tienes cédula vigente? (si/no)").toLowerCase();
-let cedulaVigente = (cedulaTexto === "si");
-
-let ahorroTexto = prompt("Ingresa tu ahorro en UF");
-let ahorroUF = parseFloat(ahorroTexto);
-
-let vulnerableTexto = prompt("¿Perteneces al 70% más vulnerable? (si/no)").toLowerCase();
-let vulnerable70 = (vulnerableTexto === "si");
-
-if (edad > 18 && cedulaVigente && ahorroUF >= 4 && vulnerable70) {
-    console.log("Puede optar al beneficio");
-
-    let ufSolicitadas = parseFloat(prompt("¿Cuántas UF deseas usar en total?"));
-    let mesesNecesarios = ufSolicitadas / 4.2;
-
-    if (ufSolicitadas <= 170 && mesesNecesarios <= 96) {
-        console.log("Puedes usar el subsidio en ese periodo.");
-    } else {
-        console.log("No puedes solicitar esa cantidad de UF o tiempo excedido.");
-    }
-
-} else {
-    console.log("No califica para el subsidio.");
-}
 
