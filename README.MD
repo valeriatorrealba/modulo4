@@ -41,3 +41,19 @@ de vivienda”, el cual consiste en un aporte mensual de 4,2 Unidades de
 Fomento (UF) por un máximo de 170 UF, el cual podrá ser utilizado de
 manera consecutiva o fragmentada en un plazo de 8 años.
 
+## ABP2 AE2 Ejercicio Práctico
+
+Problema 1:
+En un conocido juego de azar con opciones pertenecientes al conjunto de
+los números mayores a 1 y menores o iguales a 100, existen números que
+tienen más probabilidad de ganar. Esto aplica cuando un número es menor
+a 15 y mayor a 5, o bien si el número es el 70 o el 55. 
+
+Problema 2:
+Un año es bisiesto en el calendario Gregoriano si es divisible entre 4 y no
+divisible entre 100, o bien, si es divisible entre 400.
+
+Problema 3:
+Un periodista llamado Perio Dista, debe relatar un partido de tenis, pero no
+conoce las reglas del deporte. En particular, no ha logrado aprender cómo
+saber si un set ya terminó, y quién lo ganó.
