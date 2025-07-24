@@ -41,7 +41,7 @@ de vivienda”, el cual consiste en un aporte mensual de 4,2 Unidades de
 Fomento (UF) por un máximo de 170 UF, el cual podrá ser utilizado de
 manera consecutiva o fragmentada en un plazo de 8 años.
 
-## 4. ABP2 AE2 Ejercicio Práctico
+## ABP2 AE2 Ejercicio Práctico
 
 Problema 1:
 En un conocido juego de azar con opciones pertenecientes al conjunto de
@@ -57,28 +57,3 @@ Problema 3:
 Un periodista llamado Perio Dista, debe relatar un partido de tenis, pero no
 conoce las reglas del deporte. En particular, no ha logrado aprender cómo
 saber si un set ya terminó, y quién lo ganó.
-
-## 5. ABPRO AE2 Ejercicio Práctico
-
-Problema 1:
-Enunciado del ejercicio (versión con bucle sin arreglos)
-
-Carrito de compras con menú interactivo y bucle
-
-Elabora un programa que permita simular un carrito de compras utilizando prompt(), en el que el usuario pueda seleccionar productos a través de un menú.
-
-El menú debe repetirse hasta que el usuario indique que desea terminar la compra.
-
-Restricciones:
-- No se permite usar arreglos ni objetos.
-- Debes usar bucles, condicionales if-else y variables globales/locales.
-
-Pasos mínimos:
-1.  Define 3 productos con nombre y precio.
-2.  Muestra un menú que permita seleccionar un producto y cantidad.
-3.  Suma el valor neto a una variable totalNeto por cada producto agregado.
-4.  Al finalizar, calcula:
-    - IVA (19%)
-    - Despacho (gratis si el total supera los $50.000, $3000 en caso contrario)
-    - Total final
-5.  Muestra un resumen de la compra por console.log(). ( Template-literal)
