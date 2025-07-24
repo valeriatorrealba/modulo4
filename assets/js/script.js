@@ -1,8 +1,62 @@
 /*************************************************
     ABP2 AE2 Ejercicio Práctico
 **************************************************/
+const producto1 = "Polera";
+const producto2 = "Pantalón";
+const producto3 = "Zapatillas";
+
+let precio1 = 5000;
+let precio2 = 10000;
+let precio3 = 20000;
+
+let totalNeto = 0;
+let continuar = true;
+
+while (continuar) {
+    let seleccion = prompt("Elige un producto:\n1 = Polera ($5000)\n2 = Pantalón ($10000)\n3 = Zapatillas ($20000)\n0 = Terminar compra");
+
+    if (seleccion === "0") {
+        continuar = false;
+        break;
+    }
+
+    let cantidad = parseInt(prompt("¿Cuántas unidades quieres?"));
+
+    if (isNaN(cantidad) || cantidad <= 0) {
+        console.log("Cantidad inválida.");
+        continue;
+    }
+
+    if (seleccion === "1") {
+        totalNeto += precio1 * cantidad;
+    } else if (seleccion === "2") {
+        totalNeto += precio2 * cantidad;
+    } else if (seleccion === "3") {
+        totalNeto += precio3 * cantidad;
+    } else {
+        console.log("Opción no válida.");
+    }
+}
+
+if (totalNeto > 0) {
+    let iva = totalNeto * 0.19;
+    let despacho = totalNeto > 50000 ? 0 : 3000;
+    let totalFinal = totalNeto + iva + despacho;
+
+    console.log(`Resumen de tu compra: 
+- Valor Neto: $${totalNeto}
+- IVA (19%): $${iva}
+- Despacho: $${despacho}
+- TOTAL FINAL: $${totalFinal}`);
+} else {
+    console.log("No se realizó ninguna compra.");
+}
+
+/*************************************************
+    ABP2 AE2 Ejercicio Práctico
+**************************************************/
 // Problema 1:
-let valorIngresado = prompt("Ingresa un número");
+/*let valorIngresado = prompt("Ingresa un número");
 let valor = parseFloat(valorIngresado);
 let mensaje = "";
 
@@ -16,10 +70,10 @@ if (valor > 1 && valor <= 100) {
     mensaje = "El número ingresado no está dentro del rango permitido (mayor a 1 y menor o igual a 100)";
 }
 
-document.getElementById("resultado").textContent = mensaje;
+document.getElementById("resultado").textContent = mensaje;*/
 
 // Problema 2:
-let yearUsuario = prompt("Ingresa un año:");
+/*let yearUsuario = prompt("Ingresa un año:");
 let year = parseInt(yearUsuario);
 let mensaje = "";
 
@@ -33,10 +87,10 @@ if (isNaN(year) || year < 0) {
     }
 }
 
-document.getElementById("resultado").textContent = mensaje;
+document.getElementById("resultado").textContent = mensaje;*/
 
 // Problema 3:
-let jugadorA = prompt("Cuántos juegos ganó el Jugador A");
+/*let jugadorA = prompt("Cuántos juegos ganó el Jugador A");
 let valor1 = parseInt(jugadorA);
 
 let jugadorB = prompt("Cuántos juegos ganó el Jugador B");
@@ -58,7 +112,7 @@ if ((valor1 >= 0 && valor1 <= 7) && (valor2 >= 0 && valor2 <= 7)) {
     mensaje = "Los valores ingresados están fuera del rango permitido (0 a 7)";
 }
 
-document.getElementById("resultado").textContent = mensaje;
+document.getElementById("resultado").textContent = mensaje;*/
 
 /*************************************************
     ABP AE2 Ejercicio Práctico
