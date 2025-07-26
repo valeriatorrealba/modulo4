@@ -82,3 +82,24 @@ Pasos mínimos:
     - Despacho (gratis si el total supera los $50.000, $3000 en caso contrario)
     - Total final
 5.  Muestra un resumen de la compra por console.log(). ( Template-literal)
+
+## 6. M4AE3 - ABP4 Ejercicio Práctico (versión sin funciones)
+
+- Cree una función que dado un número n cree un arreglo de largo
+n, donde en cada posición del arreglo este el doble del anterior
+nota, el primer elemento del arreglo es 1
+
+- Cree una función que dado un arreglo de números de largo 10
+permita obtener el mayor número contenido en el arreglo
+
+- Dado un arreglo de strings que contiene los días de la semana,
+cree una función que le permita obtener un día en particular si se
+recibe su número correspondiente.
+Ej: 1 = Lunes , 7 = Domingo.
+
+- Cree una función que le permita buscar un elemento contenido en
+el arreglo. Nota: el arreglo solo contendrá números, y tendrá un
+largo máximo de 100.
+
+- Cree un programa que dado un arreglo de números desordenados
+los ordene ascendentemente.

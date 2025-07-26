@@ -1,8 +1,81 @@
 /*************************************************
+    M4AE3 - ABP4 Ejercicio Práctico
+**************************************************/
+// Problema 1:
+
+let n = parseInt(prompt("Ingresa un número:"));
+let arreglo = [];
+
+let valor = 1;
+
+for (let i = 0; i < n; i++) {
+    arreglo.push(valor);
+    valor *= 2;
+}
+
+console.log(arreglo);
+
+// Problema 2:
+
+let arreglo = [4, 15, 7, 22, 9, 18, 2, 30, 11, 5];
+let mayor = arreglo[0];
+
+for (let i = 1; i < arreglo.length; i++) {
+    if (arreglo[i] > mayor) {
+        mayor = arreglo[i];
+    }
+}
+
+console.log("El mayor número es:", mayor);
+
+// Problema 3:
+
+const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+
+let numero = parseInt(prompt("Ingresa un número del 1 al 7:"));
+
+if (numero >= 1 && numero <= 7) {
+    let dia = dias[numero - 1];
+    console.log("El día correspondiente es:", dia);
+    } else {
+    console.log("Número inválido. Debe estar entre 1 y 7.");
+}
+
+// Problema 3:
+
+let arreglo = [12, 45, 7, 89, 23, 56, 90, 3, 14, 67,100];
+
+let numeroBuscado = parseInt(prompt("Ingresa el número que deseas buscar:"));
+let encontrado = false;
+
+for (let i = 0; i < arreglo.length; i++) {
+    if (arreglo[i] === numeroBuscado) {
+        encontrado = true;
+    }
+    }
+
+    if (encontrado) {
+    console.log("El número sí está en el arreglo.");
+    } else {
+    console.log("El número no se encuentra en el arreglo.");
+    }
+
+// Problema 4:
+
+let arreglo = [34, 7, 23, 32, 5, 62, 12, 78, 3, 15];
+
+console.log("Arreglo original:", arreglo);
+
+arreglo.sort(function(a, b) {
+    return a - b;
+});
+
+console.log("Arreglo ordenado:", arreglo);
+
+/*************************************************
     ABPRO AE2 Ejercicio Práctico
 **************************************************/
-
-const producto1 = "Polera";
+/*const producto1 = "Polera";
 const producto2 = "Pantalón";
 const producto3 = "Zapatillas";
 
@@ -51,7 +124,7 @@ if (totalNeto > 0) {
 - TOTAL FINAL: $${totalFinal}`);
 } else {
     console.log("No se realizó ninguna compra.");
-}
+}*/
 
 /*************************************************
     ABP2 AE2 Ejercicio Práctico
