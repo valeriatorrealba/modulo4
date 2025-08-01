@@ -1,9 +1,112 @@
 /*************************************************
+    M4AE4 - ABP5 Ejercicio Práctico
+**************************************************/
+// Problema 1:
+function sumatoria(n) {
+    if (n < 1 || n >= 100) {
+        return "El número debe ser mayor o igual a 1 y menor que 100";
+    }
+
+    let suma = 0;
+    for (let i = 1; i <= n; i++) {
+        suma += i;
+    }
+
+    return suma;
+}
+
+let numero = parseInt(prompt("Ingresa un número menor que 100:"));
+let resultado = sumatoria(numero);
+console.log("La sumatoria desde 1 hasta " + numero + " es:", resultado);
+
+// Problema 2:
+function esPrimo(n) {
+    if (n <= 1) {
+        console.log(n + " no es primo");
+        return;
+    }
+
+    let esPrimo = true;
+
+    for (let i = 2; i < n; i++) {
+        if (n % i === 0) {
+        esPrimo = false;
+        break;
+        }
+    }
+
+    if (esPrimo) {
+        console.log(n + " es primo");
+    } else {
+        console.log(n + " no es primo");
+    }
+}
+
+let numero = parseInt(prompt("Ingresa un número:"));
+esPrimo(numero);
+
+// Problema 3:
+function cuentaRegresiva(n) {
+    if (n < 1 || n >= 100) {
+        console.log("El número debe ser mayor o igual a 1 y menor que 100");
+        return;
+    }
+
+    for (let i = n; i >= 1; i--) {
+        console.log(i);
+    }
+}
+
+let numero = parseInt(prompt("Ingresa un número menor que 100:"));
+cuentaRegresiva(numero);
+
+//Problema 4:
+function sumaPares(n) {
+    if (n <= 10 || n >= 1000) {
+        console.log("El número debe ser mayor que 10 y menor que 1000");
+        return;
+    }
+
+    let suma = 0;
+
+    for (let i = 2; i <= n; i += 2) {
+        suma += i;
+    }
+
+    console.log("La sumatoria de los pares desde 1 hasta " + n + " es:", suma);
+}
+
+let numero = parseInt(prompt("Ingresa un número mayor que 10 y menor que 1000:"));
+sumaPares(numero);
+
+//Problema 5:
+function tablaMultiplicar(n) {
+    console.log("Tabla de multiplicar del " + n + ":");
+
+    for (let i = 1; i <= 12; i++) {
+        console.log(n + " x " + i + " = " + (n * i));
+    }
+}
+
+let numero = parseInt(prompt("Ingresa un número para ver su tabla de multiplicar:"));
+tablaMultiplicar(numero);
+
+//Problema 6:
+let arreglo = [34, 7, 23, 32, 5, 62, 12, 78, 3, 15];
+console.log("Arreglo original:", arreglo);
+
+arreglo.sort(function(a, b) {
+    return a - b;
+});
+
+console.log("Arreglo ordenado:", arreglo);
+
+/*************************************************
     M4AE3 - ABP4 Ejercicio Práctico
 **************************************************/
 // Problema 1:
 
-let n = parseInt(prompt("Ingresa un número:"));
+/*let n = parseInt(prompt("Ingresa un número:"));
 let arreglo = [];
 
 let valor = 1;
@@ -13,11 +116,11 @@ for (let i = 0; i < n; i++) {
     valor *= 2;
 }
 
-console.log(arreglo);
+console.log(arreglo);*/
 
 // Problema 2:
 
-let arreglo = [4, 15, 7, 22, 9, 18, 2, 30, 11, 5];
+/*let arreglo = [4, 15, 7, 22, 9, 18, 2, 30, 11, 5];
 let mayor = arreglo[0];
 
 for (let i = 1; i < arreglo.length; i++) {
@@ -26,11 +129,11 @@ for (let i = 1; i < arreglo.length; i++) {
     }
 }
 
-console.log("El mayor número es:", mayor);
+console.log("El mayor número es:", mayor);*/
 
 // Problema 3:
 
-const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+/*const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
 
 let numero = parseInt(prompt("Ingresa un número del 1 al 7:"));
 
@@ -39,11 +142,11 @@ if (numero >= 1 && numero <= 7) {
     console.log("El día correspondiente es:", dia);
     } else {
     console.log("Número inválido. Debe estar entre 1 y 7.");
-}
+}*/
 
 // Problema 3:
 
-let arreglo = [12, 45, 7, 89, 23, 56, 90, 3, 14, 67,100];
+/*let arreglo = [12, 45, 7, 89, 23, 56, 90, 3, 14, 67,100];
 
 let numeroBuscado = parseInt(prompt("Ingresa el número que deseas buscar:"));
 let encontrado = false;
@@ -58,11 +161,11 @@ for (let i = 0; i < arreglo.length; i++) {
     console.log("El número sí está en el arreglo.");
     } else {
     console.log("El número no se encuentra en el arreglo.");
-    }
+    }*/
 
 // Problema 4:
 
-let arreglo = [34, 7, 23, 32, 5, 62, 12, 78, 3, 15];
+/*let arreglo = [34, 7, 23, 32, 5, 62, 12, 78, 3, 15];
 
 console.log("Arreglo original:", arreglo);
 
@@ -70,7 +173,7 @@ arreglo.sort(function(a, b) {
     return a - b;
 });
 
-console.log("Arreglo ordenado:", arreglo);
+console.log("Arreglo ordenado:", arreglo);*/
 
 /*************************************************
     ABPRO AE2 Ejercicio Práctico
