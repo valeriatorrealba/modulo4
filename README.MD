@@ -103,3 +103,16 @@ largo máximo de 100.
 
 - Cree un programa que dado un arreglo de números desordenados
 los ordene ascendentemente.
+
+## 7. M4AE5 - ABP6 Ejercicio Práctico
+
+Requerimientos Funcionales
+1. Utilizar un objeto Cine con propiedades como nombre, salas y
+capacidadPorSala.
+2. Crear un objeto Sala que tenga un identificador, una lista de asientos
+disponibles y una lista de asientos reservados.
+3. Implementar métodos en los objetos para:
+o Reservar un asiento (reservarAsiento(asiento)).
+o Cancelar una reserva (cancelarReserva(asiento)).
+o Mostrar los asientos disponibles (mostrarDisponibles()).
+4. Simular el flujo de reservas con datos de prueba.

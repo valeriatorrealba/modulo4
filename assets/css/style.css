@@ -1,0 +1,42 @@
+body {
+    background-color: #f5f5f5;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+#pantalla {
+    width: 50%;
+    margin: 0 auto 30px;
+    padding: 15px;
+    background: #ccc;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#sala-cine {
+    display: grid;
+    grid-template-columns: repeat(14, 40px);
+    gap: 6px;
+    justify-content: center;
+}
+
+.asiento {
+    width: 40px;
+    height: 40px;
+    background-color: #888;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.asiento:hover {
+    background-color: #666;
+}
+
+.asiento.reservado {
+    background-color: #c0392b;
+}

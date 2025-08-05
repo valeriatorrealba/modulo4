@@ -1,8 +1,106 @@
 /*************************************************
+    M4AE5 - ABP6 Ejercicio Práctico
+**************************************************/
+// Utilizar un objeto Cine con propiedades como nombre, salas y capacidad Por Sala.
+function Sala(id, capacidad) {
+    this.id = id;
+    this.capacidad = capacidad;
+    this.asientosDisponibles = [];
+    this.asientosReservados = [];
+
+    //Crear un objeto Sala que tenga un identificador, una lista de asientos disponibles y una lista de asientos reservados.
+    const filas = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    const totalFilas = filas.length;
+    const asientosPorFila = Math.floor(capacidad / totalFilas);
+
+    let totalAsientos = 0;
+    for (let f = 0; f < totalFilas; f++) {
+        for (let i = 1; i <= asientosPorFila && totalAsientos < capacidad; i++) {
+            const asiento = filas[f] + i;
+            this.asientosDisponibles.push(asiento);
+            totalAsientos++;
+        }
+    }
+
+    //Implementar métodos en los objetos para:
+    //Reservar un asiento (reservarAsiento(asiento)).
+    this.reservarAsiento = function(asiento) {
+        const index = this.asientosDisponibles.indexOf(asiento);
+        if (index !== -1) {
+            this.asientosDisponibles.splice(index, 1);
+            this.asientosReservados.push(asiento);
+            console.log(`Asiento ${asiento} reservado con éxito.`);
+        } else {
+            console.log(`El asiento ${asiento} ya está reservado o no existe.`);
+        }
+    };
+
+    //Cancelar una reserva (cancelarReserva(asiento)).
+    this.cancelarReserva = function(asiento) {
+        const index = this.asientosReservados.indexOf(asiento);
+        if (index !== -1) {
+            this.asientosReservados.splice(index, 1);
+            this.asientosDisponibles.push(asiento);
+            console.log(`Reserva del asiento ${asiento} cancelada.`);
+        } else {
+            console.log(`El asiento ${asiento} no está reservado.`);
+        }
+    };
+
+    //Mostrar los asientos disponibles (mostrarDisponibles()).
+    this.mostrarDisponibles = function() {
+        console.log(`Asientos disponibles en ${this.id}: ${this.asientosDisponibles.join(', ')}`);
+    };
+}
+
+const Cine = {
+    nombre: "Gestión de Reservas en un Cine",
+    capacidadPorSala: 112,
+    salas: [],
+
+    agregarSala: function(id) {
+        const sala = new Sala(id, this.capacidadPorSala);
+        this.salas.push(sala);
+    }
+};
+
+Cine.agregarSala("Sala 1");
+const sala1 = Cine.salas[0];
+const contenedor = document.getElementById("sala-cine");
+
+sala1.asientosDisponibles.concat(sala1.asientosReservados).forEach(asiento => {
+    const btn = document.createElement("button");
+    btn.classList.add("asiento");
+    btn.textContent = asiento;
+
+    if (sala1.asientosReservados.includes(asiento)) {
+        btn.classList.add("reservado");
+    }
+
+    btn.addEventListener("click", () => {
+        if (sala1.asientosReservados.includes(asiento)) {
+            sala1.cancelarReserva(asiento);
+            btn.classList.remove("reservado");
+        } else {
+            sala1.reservarAsiento(asiento);
+            btn.classList.add("reservado");
+        }
+    });
+
+    contenedor.appendChild(btn);
+});
+
+// Simular el flujo de reservas con datos de prueba
+sala1.reservarAsiento("A1");
+sala1.reservarAsiento("B2");
+sala1.cancelarReserva("A1");
+sala1.mostrarDisponibles();
+
+/*************************************************
     M4AE4 - ABP5 Ejercicio Práctico
 **************************************************/
 // Problema 1:
-function sumatoria(n) {
+/*function sumatoria(n) {
     if (n < 1 || n >= 100) {
         return "El número debe ser mayor o igual a 1 y menor que 100";
     }
@@ -17,10 +115,10 @@ function sumatoria(n) {
 
 let numero = parseInt(prompt("Ingresa un número menor que 100:"));
 let resultado = sumatoria(numero);
-console.log("La sumatoria desde 1 hasta " + numero + " es:", resultado);
+console.log("La sumatoria desde 1 hasta " + numero + " es:", resultado);*/
 
 // Problema 2:
-function esPrimo(n) {
+/*function esPrimo(n) {
     if (n <= 1) {
         console.log(n + " no es primo");
         return;
@@ -43,10 +141,10 @@ function esPrimo(n) {
 }
 
 let numero = parseInt(prompt("Ingresa un número:"));
-esPrimo(numero);
+esPrimo(numero);*/
 
 // Problema 3:
-function cuentaRegresiva(n) {
+/*function cuentaRegresiva(n) {
     if (n < 1 || n >= 100) {
         console.log("El número debe ser mayor o igual a 1 y menor que 100");
         return;
@@ -58,10 +156,10 @@ function cuentaRegresiva(n) {
 }
 
 let numero = parseInt(prompt("Ingresa un número menor que 100:"));
-cuentaRegresiva(numero);
+cuentaRegresiva(numero);*/
 
 //Problema 4:
-function sumaPares(n) {
+/*function sumaPares(n) {
     if (n <= 10 || n >= 1000) {
         console.log("El número debe ser mayor que 10 y menor que 1000");
         return;
@@ -77,10 +175,10 @@ function sumaPares(n) {
 }
 
 let numero = parseInt(prompt("Ingresa un número mayor que 10 y menor que 1000:"));
-sumaPares(numero);
+sumaPares(numero);*/
 
 //Problema 5:
-function tablaMultiplicar(n) {
+/*function tablaMultiplicar(n) {
     console.log("Tabla de multiplicar del " + n + ":");
 
     for (let i = 1; i <= 12; i++) {
@@ -89,17 +187,17 @@ function tablaMultiplicar(n) {
 }
 
 let numero = parseInt(prompt("Ingresa un número para ver su tabla de multiplicar:"));
-tablaMultiplicar(numero);
+tablaMultiplicar(numero);*/
 
 //Problema 6:
-let arreglo = [34, 7, 23, 32, 5, 62, 12, 78, 3, 15];
+/*let arreglo = [34, 7, 23, 32, 5, 62, 12, 78, 3, 15];
 console.log("Arreglo original:", arreglo);
 
 arreglo.sort(function(a, b) {
     return a - b;
 });
 
-console.log("Arreglo ordenado:", arreglo);
+console.log("Arreglo ordenado:", arreglo);*/
 
 /*************************************************
     M4AE3 - ABP4 Ejercicio Práctico
